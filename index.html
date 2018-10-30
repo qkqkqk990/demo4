@@ -35,8 +35,8 @@
                     </form>       
                     
                    <ul>
-                        <li><a id="loginlink" href="">登录</a></li>
-                        <li><a id="reigsterlink" href="">注册</a></li>
+                        <li ><div id="loginlink">登录</div></li>
+                        <li  ><div id="reigsterlink">注册</div></li>
                     </ul>
                 </div>
             </div>
@@ -57,9 +57,7 @@
 <div><img src="images/f115097e55f517a7b29922952f6ab1b0.jpg" alt="sample photo"></div>
 <div><img src="images/f115097e55f517a7b29922952f6ab1b0.jpg" alt="sample photo"></div>
 <div><img src="images/yunduo0.jpg" alt="sample photo"></div>
-<div><img src="images/photo4.jpg" alt="sample photo"></div>
-<div><img src="images/photo5.jpg" alt="sample photo"></div>
-<div><img src="images/photo6.jpg" alt="sample photo"></div>
+
 </div>
 <div class="jSlider" id="slider2" data-group="3" data-indicator="none" data-navigation="always">
 <div><img src="images/xmad_15382348153503_PhHON.jpg" alt="sample photo"></div>
@@ -169,13 +167,15 @@
     <script src="js/banner.js"></script>
     
     <script>
-        $("#loginlink").on('click',function(event){
+        $(function(){
+            $("#loginlink").on('click',function(event){
             event.stopPropagation();//防止冒泡
             $(".module_shade").removeClass("hide");
             
+        });
+        $(".modal_close").on('click',function(event){
+            $(".module_shade").addClass("hide");
         })
-        $(".module_shade .modal_close").click(function(){
-            $(".moudule_shade").addClass("show");
         })
     </script>
   
