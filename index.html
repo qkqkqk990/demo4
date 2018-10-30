@@ -30,12 +30,13 @@
                 <div class="header_nav2">
                     <form class="nav_search">
                        <input class="input_search" placeholder="请输入搜索内容"/>
-                    <a href=""><i class="iconfont icon-search"></i></a>
+                    <a href="">
+                    <i class="iconfont icon-sousuo"></i></a>
                     </form>       
                     
                    <ul>
-                        <li><a href="">登录</a></li>
-                        <li><a href="">注册</a></li>
+                        <li><a id="loginlink" href="">登录</a></li>
+                        <li><a id="reigsterlink" href="">注册</a></li>
                     </ul>
                 </div>
             </div>
@@ -130,11 +131,54 @@
             </div>
         </div>
         <div class="module_footer"></div>
+        <div class="module_shade hide">
+            <div class="moudule_login_modal">
+               <div class="module_header">
+                    <div class="modal_title">
+                        登录
+                    </div>
+                    <div class="modal_close">
+                    <i class=" iconfont icon-close frt">
+
+                    </i>
+                    </div>
+                </div>
+                <div class="module_modal_body">
+                    <form class="form_login">
+                       <div class="input_field_bg">
+                            <div class="input_field">
+                                <label class="input_label">用户名</label>
+                                <input class="input_case middle" placeholder="请输入用户名"type="text">
+                            </div>
+                            <div class="input_field">
+                                <label class="input_label">密码</label>
+                                <input class="input_case middle" placeholder="请输入密码"type="text">
+                            </div>
+                        </div>
+                        <div class="bt_box_login">
+                            <label class="input_label"></label>
+                            <button class="btn ghost">登录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
     </div>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/banner.js"></script>
-        
-
+    
+    <script>
+        $("#loginlink").on('click',function(event){
+            event.stopPropagation();//防止冒泡
+            $(".module_shade").removeClass("hide");
+            
+        })
+        $(".module_shade .modal_close").click(function(){
+            $(".moudule_shade").addClass("show");
+        })
+    </script>
+  
     
 </body>
 </html>
